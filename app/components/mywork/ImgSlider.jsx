@@ -12,7 +12,8 @@ import registerGroup_img from'@/public/mywork/scoreApp/registerGroup.png'
 import subscPopUp_img from'@/public/mywork/scoreApp/subscPopUp.png'
 import total_img from'@/public/mywork/scoreApp/total.png'
 import stats_img from'@/public/mywork/scoreApp/statistics.png'
-
+import { GoChevronLeft } from "react-icons/go";
+import { GoChevronRight } from "react-icons/go";
 
 
 
@@ -25,7 +26,7 @@ const ImgSlider = () => {
             const updatedIndexes = prevIndexes.map((prevIndex) => (prevIndex + 1) % 9)
             return updatedIndexes
             })
-        }, 2500); 
+        }, 4500); 
         return () => clearInterval(interval);
     }, []);   
  
@@ -58,17 +59,38 @@ const ImgSlider = () => {
         right4: {x: '20%', scale:0.8, zIndex: 7},
     }
 
+    //forward
+    const nextSlide = () => {
+        setPositionIndex((prev) => prev.map((i) => (i + 1) % positions.length));
+    };
+
+    // back
+    const prevSlide = () => {
+        setPositionIndex((prev) =>
+        prev.map((i) => (i - 1 + positions.length) % positions.length)
+        );
+    };
+
 
   return (
     <div className="flex items-center flex-col justify-center">
-       {images.map((image, index) =>(
+        {/* Button to back */}
+         <button
+            onClick={prevSlide}
+            className="absolute left-5 sm:left-20 md:left-30 lg:left-49 z-20 bg-white/40 hover:bg-white/70 rounded-full p-2 shadow-md"
+        >
+            <GoChevronLeft size={20} />
+        </button>
+
+        {/* images */}
+        {images.map((image, index) =>(
             <motion.div
                 key={index}
                 initial="center"
                 animate={positions[positionIndex[index]]}
                 variants={imgVariants}
                 transition={{duration:0.4}}
-                className="w-[75%] sm:w-[53%] md:w-[55%] absolute"
+                className="w-[75%] sm:w-[53%] md:w-[55%] absolute left-1/2 -translate-x-1/2"
             >
                 <Image
                     src={image}
@@ -76,8 +98,15 @@ const ImgSlider = () => {
                     className="rounded-xl object-contain max-h-[350px] w-auto"
                 />
             </motion.div>
-
         ))}
+
+        {/* Button to forward */}
+        <button
+            onClick={nextSlide}
+            className="absolute right-5 sm:right-20 md:right-30 lg:right-49 z-20 bg-white/40 hover:bg-white/70 rounded-full p-2 shadow-md"
+        >
+            <GoChevronRight size={20} />
+        </button>
     
     </div>
 )}
