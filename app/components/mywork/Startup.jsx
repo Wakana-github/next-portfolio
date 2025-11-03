@@ -16,6 +16,7 @@ import priceCardCode from'@/public/mywork/startup/priceCardCode.png'
 import wing_icon_pink from '@/public/wing_icon_pink.svg'
 import MoreDetailButton from '../seeMoreDetailButton/SeeMoreDetailButton';
 import CloseDetailButton from '../seeMoreDetailButton/closeDetailButton';
+import FadeInSection from '@/app/components/FadeInSection';
 
 
 const Startup = () => {
@@ -26,6 +27,7 @@ const Startup = () => {
 
 
   return (
+    <FadeInSection>
     <div className="pt-5 md:pt-15 px-4">
        <div id="startUp" className=" px-4 max-w-7xl mx-auto pb-3">
             <div className="lg:flex lg:items-center lg:justify-center ms:mx-6 lg:mx-10 text-base md:text-lg xl:text-xl">
@@ -129,6 +131,7 @@ const Startup = () => {
           )}
         </div>
       </div>
+    </FadeInSection>
       
   )
 }

@@ -15,6 +15,7 @@ import xssCode from '@/public/mywork/phpLibrary/xssCode.png'
 import limitAttempts from '@/public/mywork/phpLibrary/limitAttempts.png'
 import MoreDetailButton from '../seeMoreDetailButton/SeeMoreDetailButton';
 import CloseDetailButton from '../seeMoreDetailButton/closeDetailButton';
+import FadeInSection from '@/app/components/FadeInSection';
 
 
 
@@ -24,6 +25,7 @@ export default function PhpLibrary (){
 const [showDetails, setShowDetails] = useState(false);
 
   return (
+    <FadeInSection>
     <div className="bg-gray-200 pt-5 md:pt-15 px-8 md:px-4">
         <div id="phpLibrary" className="max-w-7xl mx-auto pb-3">
                 <div className="lg:flex lg:justify-center ms:mx-6 lg:mx-10 text-base md:text-lg xl:text-xl">
@@ -130,6 +132,7 @@ const [showDetails, setShowDetails] = useState(false);
             )}       
         </div>
     </div> 
+    </FadeInSection>
   )
 }
 
