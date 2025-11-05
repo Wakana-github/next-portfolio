@@ -50,13 +50,15 @@ import FadeInSection from '@/app/components/FadeInSection';
                     />
                     </div>
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Summary</h3>
-                    <p>- This is a score tracking and calculation application for board games. 
-                      It allows users to calculate and record their scores, and create groups. 
+                    <p>- A full-stack web application designed for tracking and calculating scores in board games. 
+                      It allows users to calculate and record their scores, as well as create groups. 
                       Premium users can access their personal and group score statistics.
                     </p>
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Purpose</h3>
-                    <p>- This project was built to practice Full-stack web application, 
-                      including authentication and secure payments. It was originally built with Node.js(Express) then converted into Next.js app router.</p>     
+                    <p>- This project was developed to enhance my full-stack development skills,
+                      including authentication and secure payment integration. It was initially 
+                      built with Node.js(Express) and later converted to a Next.js App Router for 
+                      easier deployment and management on Vercel.</p>     
                 </div>
                 {/* right */}
                 <div className="right lg:w-1/2">
@@ -67,23 +69,22 @@ import FadeInSection from '@/app/components/FadeInSection';
                     </p>
                     <p>- See the code on my <a href="https://github.com/Wakana-github/score-sheet" target="_blank" alt="Githublink" className="text-blue-700 border-b">
                         Github
-                      </a>.
+                      </a>
                     </p> 
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3 space-y-1">Design</h3>
                     <p>- Utilised Tailwind CSS, Motion animations, and Google Fonts</p>
-                    <p>- Created and implemented reusable button components across the application</p>
-                    <p>- Mobile-first design approach</p>
+                    <p>- Designed and implemented reusable button components across the application</p>
+                    <p>- Followed a mobile-first, responsive design approach</p>
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Features</h3>
                     <div className="space-y-1">
-                      <p>- User registration and authentication with Clerk</p>
-                      <p>- Calculation of inputted scores and automated ranking</p>
-                      <p>- Group creation and management</p>
-                      <p>- Create a custom sheet by handling number of items and players </p>
-                      <p>- Set nickname as a user's player name </p>
+                      <p>- User registration and authentication powered by Clerk</p>
+                      <p>- Real-time score calculation and automated ranking system</p>
+                      <p>- Group creation and management functionality</p>
+                      <p>- Custom score sheet generation based on the number of items and players</p>
+                      <p>- Option to set a nickname as the player name</p>
                       <p>- Access to personal and group statistics as a Premium feature</p>
-                      <p>- Secure subscription payment integration with Stripe</p>
-                      <p>- Mobile-first, responsive layout</p>
-                      <p>- User-friendly navigation menu</p>
+                      <p>- Secure subscription payments integrated with Stripe</p>
+                      <p>- Intuitive navigation menu</p>
                       <p>- Animation effects with Motion</p>
                     </div>
                 </div>
@@ -92,7 +93,7 @@ import FadeInSection from '@/app/components/FadeInSection';
             <div className="relative overflow-hidden flex justify-center items-center h-60 sm:h-[350px] md:h-[300px] xl:h-[400px] mt-5">
                       <ImgSlider />
             </div>
-            <div className="block place-items-center mt-5 md:mt-10">
+            <div className="grid place-items-center mt-5 md:mt-10">
               {!showDetails && (
                 <MoreDetailButton onClick={() => setShowDetails(true)} />
               )}
@@ -106,26 +107,26 @@ import FadeInSection from '@/app/components/FadeInSection';
                     <div className="left lg:mr-8 lg:w-1/2">
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-7 md:mt-15">Security Features</h3>
                         <h4 className="font-bold mt-3">User registration and authentication</h4>
-                        <p>- Implemented Clerk authenticaion to provide secure user authentication personal data management. </p>
-                        <h4 className="font-bold mt-3">Check CSRF Token and Origin</h4>
-                        <p>- Implemented Origin and CSEF token check to ensure the API request is made from the correct user.</p>
+                        <p>- Implemented Clerk authentication to provide secure user login and personal data management. </p>
+                        <h4 className="font-bold mt-3">CSRF Token and Origin Varification</h4>
+                        <p>- Implemented Origin and CSEF token varification to ensure that API requests are made only by authorised users.</p>
                         <div className="w-full grid place-items-center py-3 gap-2 md:py-3">
                           <Image src={sendToken_img} alt="auth_img" width={350} height={350}/>
                           <Image src={origin_img} alt="auth_img" width={450} height={350}/>
                           <p className="text-sm  text-gray-600">Example of sending tokens and origin check.</p>
                         </div>
                         <h4 className="font-bold mt-3">Rate limit</h4>
-                        <p>- Set rate limits to prevent server not to flood with mass request (DoS attack).</p>    
+                        <p>- Implemented rate limiting to prevent server from being flooded with excessive requests (DoS attacks).</p>    
                     </div>
                     <div className="right lg:w-1/2 my-5">
                       <div className="w-full grid place-items-center py-3 gap-2 mt-25">
                         <Image src={ratelimit_img} alt="sanitise_img" width={450} height={250}/>
                         <p className="text-sm  text-gray-600">Example of ratelimit.</p>
                       </div>
-                      <h4 className="font-bold">Sanitisation and Validation for input</h4>
-                      <p>- Implemented sanitisation and validation to prevent malisious user to input unexpected code (XSS (Cross-Site Scripting attack)). </p>
-                      <p>- Implemented validation for user input to ensure that the input for each field is correct type, expected length and characters.</p>
-                      <p>- Implemented sanitisation to remove all HTML tags and attributes, ensuring only plain text is stored in the database.</p>
+                      <h4 className="font-bold">SInput Sanitisation and Validation</h4>
+                      <p>- Implemented input sanitisation and validation to prevent malisious users from injecting unexpected code (XSS - Cross-Site Scripting attacks). </p>
+                      <p>- Implemented validation to ensure that each input field contains the correct data type, expected length, and valid characters.</p>
+                      <p>- Applied sanitisation to remove all HTML tags and attributes, ensuring that only plain text is stored in the database.</p>
                         <div className="w-full grid place-items-center py-3 gap-2 md:py-3">
                           <Image src={sanitise_img} alt="sanitise_img" width={450} height={350}/>
                           <Image src={validation_img} alt="validation_img" width={450} height={250}/>
@@ -133,7 +134,7 @@ import FadeInSection from '@/app/components/FadeInSection';
                         </div>
                     </div> 
                 </div>
-                <div className="md:text-xl xl:text-2xl block place-items-center mt-10">
+                <div className="md:text-xl xl:text-2xl grid place-items-center mt-10">
                   <CloseDetailButton onClick={() => setShowDetails(false)} />
                 </div>
               </>

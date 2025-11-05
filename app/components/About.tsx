@@ -43,9 +43,10 @@ export default function About(){
           <FadeInSection>
             <div className='mt-5 about-sentense text-base md:text-lg xl:text-xl  px-6'>
               <p>
-                Hi there! I’m a Web Developer who are capable of both Frontend and Backend development 
-                with a knowleage of a wide range of programming languages, database management, and web development including modern front-end libraries, system design, networking, and security, 
-                which I acquired in both formal study and personal project development.  
+                Hi there! I’m a Web Developer capable of both Frontend and Backend development, 
+                with a knowleage in a wide range of programming languages, database management, 
+                and web techonlogies, including modern front-end libraries, system design, networking, and security, 
+                which I acquired through both formal study and personal project development.  
               </p>
               <p className="mt-2">
                 Please don’t hesitate to contact me if you’re looking for a developer.

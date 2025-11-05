@@ -36,26 +36,26 @@ const [showDetails, setShowDetails] = useState(false);
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-2">Technology Used</h3>
                         <p>- HTML, CSS (Bootstrap), PHP and MySQL</p>
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Purpose</h3>
-                        <p>- This system was created as part of my coursework. It is designed for library management and includes a login page styled with Bootstrap.</p>
+                        <p>- This system was developed as part of my coursework. It is designed for library management and includes a login page styled with Bootstrap.</p>
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Code link</h3>
-                        <p>- View the 
-                            <a href="https://vegelog.xsrv.jp/" target="_blank" alt="githubLink">live page</a>
+                        <p>- View the <a href="https://vegelog.xsrv.jp/" target="_blank" alt="githubLink" className="text-blue-700 border-b">
+                                live page
+                            </a>
                         </p>
-                        <p>- View the source code on my 
-                            <a href="https://github.com/Wakana-github/php_LibraryManagement" target="_blank" alt="githubLink">Github</a>
-                            .
+                        <p>- View the source code on my <a href="https://github.com/Wakana-github/php_LibraryManagement" target="_blank" alt="githubLink" className="text-blue-700 border-b">
+                             Github</a>
                         </p>
                     </div>
                     {/* --------- Right ----------- */}
                     <div className="right lg:w-1/2">
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Design</h3>
                         <p>- The design was created using Figma.
-                        <br/>- View sitemap and storyboard <a href={navigation} target="_blank" alt="siteMap">(click)</a>
-                        <br/>- View prototype image <a href={prototype} target="_blank" alt="githubLink">(click)</a></p>
+                        <br/>- View sitemap and storyboard <a href={navigation.src} target="_blank" alt="siteMap" className="text-blue-700 border-b">(click)</a>
+                        <br/>- View prototype image <a href={prototype.src} target="_blank" alt="githubLink" className="text-blue-700 border-b">(click)</a></p>
                         <div className="block place-items-center mt-5 px-2 lg:flex">
                                 <Image className='prototype' src={prototype} alt="prototype_image2" width={350} height={350}/>
                         </div>
-                        <div className="block place-items-center lg:flex lg:pl-5">
+                        <div className="grid place-items-center lg:flex lg:pl-5">
                         {!showDetails && (
                             <MoreDetailButton onClick={() => setShowDetails(true)} />
                         )}
@@ -71,9 +71,9 @@ const [showDetails, setShowDetails] = useState(false);
                         <div className="left lg:mr-8 lg:w-1/2">
                             <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Features</h3>
                             <h4 className="font-bold mt-3"> Login Page </h4>
-                            <p>- Only an authorlised user can log  in to the system. </p>
+                            <p>- Only authorlised users can log  in to the system. </p>
                             <h4 className="font-bold mt-3">Database Interaction</h4>
-                            <p>- Authorised users can Create, Read, Update and Delete book data from the library databse.</p>
+                            <p>- Authorised users can Create, Read, Update and Delete book data in the library databse.</p>
                             <div className="block place-items-center sm:flex sm:justify-flex sm:items-center gap-2 mt-5">
                                 <div>
                                     <Image className='mt-3' src={login} alt="login_image" width={200} height={400}/>
@@ -111,7 +111,7 @@ const [showDetails, setShowDetails] = useState(false);
                         </div>
                         <div className="right lg:w-1/2">
                         <h4 className="font-bold mt-3">Password Hashing & Verification</h4>
-                            <p>- Encrypted passwords stored in the database and used password_verify() to securely compare hashed passwords.</p>
+                            <p>- Stored encrypted passwords in the database and used password_verify() to securely compare hashed passwords.</p>
                             <div className="block place-items-center">
                                 <Image className='encryptedData' src={encryptedData} alt="encryptedData_image" width={550} height={300} />
                             </div>
@@ -125,7 +125,7 @@ const [showDetails, setShowDetails] = useState(false);
 
                         </div>
                         </div>
-                        <div className="md:text-xl xl:text-2xl block place-items-center mt-10">
+                        <div className="md:text-xl xl:text-2xl grid place-items-center mt-10">
                             <CloseDetailButton onClick={() => setShowDetails(false)} />
                         </div>
                     </> 
