@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import sratUp_img from'@/public/mywork/startup/Startup_LP.png'
 import lightMode_img from'@/public/mywork/startup/startup_light.png'
 import darkMode_img from'@/public/mywork/startup/startup_dark.png'
@@ -22,6 +22,17 @@ import FadeInSection from '@/app/components/FadeInSection';
 const Startup = () => {
 
   const [showDetails, setShowDetails] = useState(false);
+  const statrtUpRef = useRef<HTMLDivElement | null>(null);
+  
+    const handleCloseDetails = () => {
+      //Scroll to the top (where there is ref)
+      setShowDetails(false);
+      if (statrtUpRef.current) {
+        const y = statrtUpRef.current.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    };
+  
 
 
 
@@ -29,7 +40,7 @@ const Startup = () => {
   return (
     <FadeInSection>
     <div className="pt-5 md:pt-15 px-4">
-       <div id="startUp" className=" px-4 max-w-7xl mx-auto pb-3">
+       <div id="startUp" ref={statrtUpRef} className=" px-4 max-w-7xl mx-auto pb-3">
             <div className="lg:flex lg:items-center lg:justify-center ms:mx-6 lg:mx-10 text-base md:text-lg xl:text-xl">
                 {/* Left */}
                 <div className="left lg:mr-8 lg:w-1/2">
@@ -48,10 +59,10 @@ const Startup = () => {
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Purpose</h3>
                     <p>- This project was created to practice using modern front-end technologies and to build a sample corporate website.</p>
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Code link</h3>
-                    <p>- See the <a href="https://startup-page-dark-7thm.vercel.app/" target="_blank" alt="Codelink" className="text-blue-700 border-b">
+                    <p>- See the <a href="https://startup-page-dark-7thm.vercel.app/" target="_blank"  className="text-blue-700 border-b">
                       live page</a>
                     </p>
-                    <p>- See the code on my <a href="https://github.com/Wakana-github/startupPage_dark" target="_blank" alt="Githublink" className="text-blue-700 border-b">
+                    <p>- See the code on my <a href="https://github.com/Wakana-github/startupPage_dark" target="_blank" className="text-blue-700 border-b">
                       Github</a>
                     </p>       
                 </div>
@@ -128,7 +139,7 @@ const Startup = () => {
                 </div> 
             </div>
             <div className="md:text-xl xl:text-2xl grid place-items-center mt-10">
-              <CloseDetailButton onClick={() => setShowDetails(false)} />
+              <CloseDetailButton onClick={handleCloseDetails} />
             </div>
             </>
           )}

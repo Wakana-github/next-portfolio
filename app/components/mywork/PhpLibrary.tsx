@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import navigation from '@/public/mywork/phpLibrary/Navigation_LibrarySystem.png'
 import prototype from '@/public/mywork/phpLibrary/Prototype_LibrarySystem.png'
@@ -23,11 +23,21 @@ import FadeInSection from '@/app/components/FadeInSection';
 export default function PhpLibrary (){
 
 const [showDetails, setShowDetails] = useState(false);
+const libraryRef = useRef<HTMLDivElement | null>(null);
+  
+const handleCloseDetails = () => {
+    //Scroll to the top (where there is ref)
+    setShowDetails(false);
+    if (libraryRef.current) {
+    const y = libraryRef.current.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: y, behavior: "smooth" });
+    }
+};
 
   return (
     <FadeInSection>
     <div className="bg-gray-200 pt-5 md:pt-15 px-8 md:px-4">
-        <div id="phpLibrary" className="max-w-7xl mx-auto pb-3">
+        <div id="phpLibrary" ref={libraryRef} className="max-w-7xl mx-auto pb-3">
                 <div className="lg:flex lg:justify-center ms:mx-6 lg:mx-10 text-base md:text-lg xl:text-xl">
                     {/* --------- Left ----------*/}
                     <div className="left lg:mr-8 lg:w-1/2">
@@ -38,11 +48,11 @@ const [showDetails, setShowDetails] = useState(false);
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Purpose</h3>
                         <p>- This system was developed as part of my coursework. It is designed for library management and includes a login page styled with Bootstrap.</p>
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Code link</h3>
-                        <p>- View the <a href="https://vegelog.xsrv.jp/" target="_blank" alt="githubLink" className="text-blue-700 border-b">
+                        <p>- View the <a href="https://vegelog.xsrv.jp/" target="_blank" className="text-blue-700 border-b">
                                 live page
                             </a>
                         </p>
-                        <p>- View the source code on my <a href="https://github.com/Wakana-github/php_LibraryManagement" target="_blank" alt="githubLink" className="text-blue-700 border-b">
+                        <p>- View the source code on my <a href="https://github.com/Wakana-github/php_LibraryManagement" target="_blank" className="text-blue-700 border-b">
                              Github</a>
                         </p>
                     </div>
@@ -50,8 +60,8 @@ const [showDetails, setShowDetails] = useState(false);
                     <div className="right lg:w-1/2">
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Design</h3>
                         <p>- The design was created using Figma.
-                        <br/>- View sitemap and storyboard <a href={navigation.src} target="_blank" alt="siteMap" className="text-blue-700 border-b">(click)</a>
-                        <br/>- View prototype image <a href={prototype.src} target="_blank" alt="githubLink" className="text-blue-700 border-b">(click)</a></p>
+                        <br/>- View sitemap and storyboard <a href={navigation.src} target="_blank" className="text-blue-700 border-b">(click)</a>
+                        <br/>- View prototype image <a href={prototype.src} target="_blank" className="text-blue-700 border-b">(click)</a></p>
                         <div className="block place-items-center mt-5 px-2 lg:flex">
                                 <Image className='prototype' src={prototype} alt="prototype_image2" width={350} height={350}/>
                         </div>
@@ -126,7 +136,7 @@ const [showDetails, setShowDetails] = useState(false);
                         </div>
                         </div>
                         <div className="md:text-xl xl:text-2xl grid place-items-center mt-10">
-                            <CloseDetailButton onClick={() => setShowDetails(false)} />
+                            <CloseDetailButton onClick={handleCloseDetails} />
                         </div>
                     </> 
             )}       

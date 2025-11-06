@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import app_img from'@/public/mywork/scoreApp/app_img.png'
 import sendToken_img from'@/public/mywork/scoreApp/sendToken.png'
 import origin_img from'@/public/mywork/scoreApp/origin.png'
@@ -17,12 +17,22 @@ import FadeInSection from '@/app/components/FadeInSection';
  export default function ScoreSheet () {
 
   const [showDetails, setShowDetails] = useState(false);
+  const scoreSheetRef = useRef<HTMLDivElement | null>(null);
+
+  const handleCloseDetails = () => {
+    //Scroll to the top (where there is ref)
+    setShowDetails(false);
+    if (scoreSheetRef.current) {
+      const y = scoreSheetRef.current.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
 
 
 
   return (
-    <div id="scoreSheet" className="pt-5  bg-gray-200 md:pt-15 px-4">
+    <div id="scoreSheet" ref={scoreSheetRef} className="pt-5  bg-gray-200 md:pt-15 px-4">
        <div  className=" px-4 max-w-7xl mx-auto pb-3">
           <FadeInSection>
             <div className="relative flex justify-center text-center mb-10">
@@ -63,11 +73,11 @@ import FadeInSection from '@/app/components/FadeInSection';
                 {/* right */}
                 <div className="right lg:w-1/2">
                  <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3 ">Code link</h3>
-                    <p>- See the <a href="https://score-sheet-idq6.vercel.app/" target="_blank" alt="Codelink" className="text-blue-700 border-b">
+                    <p>- See the <a href="https://score-sheet-idq6.vercel.app/" target="_blank"  className="text-blue-700 border-b">
                          live page
                       </a>
                     </p>
-                    <p>- See the code on my <a href="https://github.com/Wakana-github/score-sheet" target="_blank" alt="Githublink" className="text-blue-700 border-b">
+                    <p>- See the code on my <a href="https://github.com/Wakana-github/score-sheet" target="_blank"  className="text-blue-700 border-b">
                         Github
                       </a>
                     </p> 
@@ -95,7 +105,7 @@ import FadeInSection from '@/app/components/FadeInSection';
             </div>
             <div className="grid place-items-center mt-5 md:mt-10">
               {!showDetails && (
-                <MoreDetailButton onClick={() => setShowDetails(true)} />
+                <MoreDetailButton onClick={() => setShowDetails(true)}  />
               )}
             </div>
             
@@ -135,7 +145,7 @@ import FadeInSection from '@/app/components/FadeInSection';
                     </div> 
                 </div>
                 <div className="md:text-xl xl:text-2xl grid place-items-center mt-10">
-                  <CloseDetailButton onClick={() => setShowDetails(false)} />
+                  <CloseDetailButton onClick={handleCloseDetails} />
                 </div>
               </>
             </FadeInSection>
