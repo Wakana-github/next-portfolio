@@ -51,8 +51,8 @@ export default function Projects() {
              {project_data.length > 3 && (
                 <button className="read-more-btn" onClick={() => setShowAllProjects(prevState => !prevState)}>
                   {showAllProjects 
-                   ?<span>Hide Projects<HiChevronDoubleUp className="inline-block"/></span>
-                   :<span>Read More<HiChevronDoubleDown className="inline-block"/></span> }
+                   ?<span>Show Less<HiChevronDoubleUp className="inline-block"/></span>
+                   :<span>Show More<HiChevronDoubleDown className="inline-block"/></span> }
                 </button>
              )}
       </div>

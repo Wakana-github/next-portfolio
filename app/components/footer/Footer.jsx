@@ -16,37 +16,37 @@ export default function Footer() {
       <ul className="flex flex-col sm:flex-row  justify-between text-center mx-4 text-base lg:text-lg gap-1">
         <li>
           <AnchorLink  offset={50}  href="#welcome-section" className="hover:border-b" >
-            welcome
+            Welcome
           </AnchorLink>
         </li>
         <li>
           <AnchorLink  offset={50}  href="#about-me" className="hover:border-b">
-            about me
+            About me
           </AnchorLink>
         </li>
         <li>
           <AnchorLink  offset={50}  href="#skills" className="hover:border-b">
-            skills
+            Skills
           </AnchorLink>
         </li>
         <li>
           <AnchorLink  offset={50}  href="#qualification" className="hover:border-b">
-            qualification
+            Qualification
           </AnchorLink>
         </li>
         <li>
           <AnchorLink  offset={50}  href="#scoreSheet" className="hover:border-b">
-            my work
+            My work
           </AnchorLink>
         </li>
         <li>
           <AnchorLink key='projects' offset={50}  href="#projects" className="hover:border-b">
-            projects
+            Projects
           </AnchorLink>
         </li>
         <li>
           <AnchorLink  offset={50}  href="#contact" className="hover:border-b">
-            contact
+            Contact
           </AnchorLink>
         </li>
       </ul>

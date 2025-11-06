@@ -71,7 +71,7 @@ export default function Navbar() {
             {/* MyWork */}
             <li>
               <AnchorLink  offset={50} className='ml-4 lg:ml-10 hover:border-b' href='#scoreSheet'>
-                my work
+                My work
               </AnchorLink>
               {/* {menu==='myWork'? <Image src={wing_icon_pink} alt ='' width={10} height={10}/>:<></>} */}
             </li>

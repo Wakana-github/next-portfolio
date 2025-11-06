@@ -32,7 +32,7 @@ export default function PersonalPage (){
                 <h3 className="item_heading">Design</h3>
                 <p>- Designed using Canva. <br/><span className="designLink">See <a href={pdfPath}  target="_blank" alt="designLink">design File</a></span></p>
                 <h3 className="item_heading">Code Link</h3>
-                <p>- You can see the code for this page on my <a href="https://github.com/Wakana-github/reactPage_withProjects"  target="_blank" alt="designLink">Github</a>.</p>     
+                <p>- You can see the code for this page on my <a href="https://github.com/Wakana-github/next-portfolio"  target="_blank" alt="designLink">Github</a>.</p>     
             </div>
 
             <div className="right">
