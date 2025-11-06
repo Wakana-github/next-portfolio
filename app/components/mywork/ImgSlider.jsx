@@ -20,15 +20,16 @@ import { GoChevronRight } from "react-icons/go";
 const ImgSlider = () => {
     const [positionIndex, setPositionIndex] = useState([0,1,2,3,4,5,6,7,8])
 
-    useEffect(() => {
-        const interval = setInterval(() =>{
-            setPositionIndex((prevIndexes) => {
-            const updatedIndexes = prevIndexes.map((prevIndex) => (prevIndex + 1) % 9)
-            return updatedIndexes
-            })
-        }, 4500); 
-        return () => clearInterval(interval);
-    }, []);   
+    // Automatically changing cards
+    // useEffect(() => {
+    //     const interval = setInterval(() =>{
+    //         setPositionIndex((prevIndexes) => {
+    //         const updatedIndexes = prevIndexes.map((prevIndex) => (prevIndex + 1) % 9)
+    //         return updatedIndexes
+    //         })
+    //     }, 4500); 
+    //     return () => clearInterval(interval);
+    // }, []);   
  
     const images = [
         home_img, chooseGame_img, total_img, custom_img, stats_img, gorup_img, 
