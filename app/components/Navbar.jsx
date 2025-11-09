@@ -19,7 +19,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className={`fixed w-full h-20  shadow-xl bg-[#625551] text-white z-100`}> 
+    <nav className={`fixed w-full h-20  shadow-xl bg-[#625551] text-white dark:shadow-gray-400 z-100 `}> 
       <div className="flex justify-between items-center h-full w-hull px-4 2xl:px-16">
 
       {/* Left side: Logo  */}

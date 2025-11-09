@@ -49,12 +49,12 @@ const ImgSlider = () => {
     ]
 
     const imgVariants = {
-        center: {x: '0%', scale:1, zIndex: 10},
+        center: {x: '3%', scale:1, zIndex: 10},
         left4: {x: '-20%', scale:0.8, zIndex: 7},
         left3: {x: '-40%', scale:0.6, zIndex: 5},
         left2: {x: '-60%', scale:0.5, zIndex: 3},
-        left1: {x: '-90%', scale:0.4, zIndex: 2},
-        right1: {x: '90%', scale:0.4, zIndex: 2},
+        left1: {x: '-80%', scale:0.4, zIndex: 2},
+        right1: {x: '80%', scale:0.4, zIndex: 2},
         right2: {x: '60%', scale:0.5, zIndex: 3},
         right3: {x: '40%', scale:0.6, zIndex: 5},
         right4: {x: '20%', scale:0.8, zIndex: 7},
@@ -78,9 +78,9 @@ const ImgSlider = () => {
         {/* Button to back */}
          <button
             onClick={prevSlide}
-            className="absolute left-5 sm:left-20 md:left-30 lg:left-49 z-20 bg-white/40 hover:bg-white/70 rounded-full p-2 shadow-md"
+            className="absolute left-5 sm:left-20 md:left-30 lg:left-49 z-20 bg-white/70 hover:bg-white rounded-full p-2 shadow-md"
         >
-            <GoChevronLeft size={20} />
+            <GoChevronLeft size={25} />
         </button>
 
         {/* images */}
@@ -104,9 +104,9 @@ const ImgSlider = () => {
         {/* Button to forward */}
         <button
             onClick={nextSlide}
-            className="absolute right-5 sm:right-20 md:right-30 lg:right-49 z-20 bg-white/40 hover:bg-white/70 rounded-full p-2 shadow-md"
+            className="absolute right-5 sm:right-20 md:right-30 lg:right-49 z-20 bg-white/70 hover:bg-white rounded-full p-2 shadow-md"
         >
-            <GoChevronRight size={20} />
+            <GoChevronRight size={25} />
         </button>
     
     </div>

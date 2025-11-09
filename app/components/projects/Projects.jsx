@@ -33,7 +33,7 @@ export default function Projects() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-5 text-base md:text-lg xl:text-xl">
               {displayedProjects.map((project, index)=>{
                   return(
-                  <div key={index} className='project border-2 border-black rounded-lg text-center'>
+                  <div key={index} className='project border-2 border-black dark:border-white rounded-lg text-center'>
                       <Image  src={project.w_img} alt={project.w_name} width={600} height={250} className="mx-auto rounded"/>
                       <div className='font-bold px-2'>{project.w_name}</div>
                       <p className="px-2 py-3 text-sm md:text-base">{project.w_disc}</p>
@@ -49,11 +49,14 @@ export default function Projects() {
           </div>
         </FadeInSection>
              {project_data.length > 3 && (
-                <button className="read-more-btn" onClick={() => setShowAllProjects(prevState => !prevState)}>
-                  {showAllProjects 
-                   ?<span>Show Less<HiChevronDoubleUp className="inline-block"/></span>
-                   :<span>Show More<HiChevronDoubleDown className="inline-block"/></span> }
+              <div className="block place-items-center my-5">
+                <button className=" grid place-items-center  py-4 px-10 rounded-xl border-2 transition duration-300 cursor-pointer read-more-bg text-black dark:border-gray-500 hover:scale-105" 
+                  onClick={() => setShowAllProjects(prevState => !prevState)}>
+                    {showAllProjects 
+                    ?<span className="text-base md:text-lg xl:text-xl">Show Less<HiChevronDoubleUp className="inline-block"/></span>
+                    :<span className="text-base md:text-lg xl:text-xl">Show More<HiChevronDoubleDown className="inline-block "/></span> }
                 </button>
+              </div>
              )}
       </div>
     </div>

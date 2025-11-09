@@ -17,12 +17,6 @@ html {
   --font-subHeading: var(--font-abril-fatface);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
@@ -51,4 +45,46 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.linkfont{
+  color:#2779F6;
+  text-decoration: underline;
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+
+   .text-gradient {
+    background: linear-gradient(110deg, #f1dcf1  20%, #dd5ee9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subText-gradient{
+  background: linear-gradient(170deg, #f700ff  30%, #00ccff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+  .darkText-gradient{
+  background: linear-gradient(15deg, #ffee59   5%, #f1fdff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.linkfont{
+  color:yellow;
+  text-decoration: underline;
+  
+}
+  
 }

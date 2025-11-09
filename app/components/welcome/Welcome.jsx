@@ -9,11 +9,11 @@ import FadeInSection from '@/app/components/FadeInSection';
 
 export default function Welcome(){
   return (
-    <div id='welcome-section' className='welcome-section pt-20 xl:pt-30' >
+    <div id='welcome-section' className='welcome-section pt-20 xl:pt-30 px-2' >
       <FadeInSection>
         <div className="flex flex-col items-center">
             <p id="hello" 
-                className='text-2xl md:text-3xl xl:text-4xl font-title transform -translate-x-15 sm:-translate-x-40 xl:-translate-x-50 mt-10 z-0 '>
+                className='text-2xl md:text-3xl xl:text-4xl font-title transform -translate-x-15 sm:-translate-x-40 xl:-translate-x-49 mt-10 z-0 '>
               Hello, welcome to
             </p>
             <h1 id="hello-name" className='text-4xl md:text-5xl xl:text-6xl font-title font-bold mt-5 text-gradient'>
@@ -22,7 +22,7 @@ export default function Welcome(){
             <h1 id="hello-title" className='text-4xl md:text-5xl xl:text-6xl font-title font-bold mt-5 text-gradient'>
               PORTFOLIO
             </h1>
-            <p id="jobtitle" className='text-base sm:text-lg md:text-xl lg:text-3xl font-title mt-3'>
+            <p id="jobtitle" className='text-base sm:text-lg md:text-xl lg:text-3xl font-title mt-3 z-20' >
               FRONT-END / WEB DEVELOPER
             </p>
         </div>
@@ -30,13 +30,13 @@ export default function Welcome(){
 
       <FadeInSection delay={0.5}>
         <div className="device-image">
-          <div className="device1">
+          <div className="device1 rounded-full dark:bg-gray-500 z-0">
             <Image src={laptop_image} alt="laptop-image" width={150} height={100}/>
           </div>
-            <div className="device2">
+            <div className="device2 rounded-full dark:bg-gray-500 z-0">
               <Image src={phone_image} alt="phone-image" width={100} height={100}/>
             </div>
-            <div className="device3">
+            <div className="device3 rounded-full dark:bg-gray-500 z-0">
               <Image src={desktop_image} alt="desktop-image" width={130} height={100}/>
             </div>
         </div>

@@ -15,6 +15,7 @@ export default function Contact() {
     const { register, handleSubmit, formState: {errors} } = useForm();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [lastSubmitTime, setLastSubmitTime] = useState(0);
+    const [submitSuccess, setSubmitSuccess] = useState(false);
     
     const NAME_REGEX = /^[a-zA-Z\s]+$/;
     const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
@@ -62,6 +63,7 @@ export default function Contact() {
                 if (res.success) {
                     alert(res.message);
                     setLastSubmitTime(currentTime); // Update last submission time
+                    //Reset form contents
                     }
             } catch (error) {
                 alert('An error occurred while submitting the form. Please try again later.');
@@ -104,6 +106,7 @@ export default function Contact() {
                             id="name"
                             placeholder="Enter your name"
                             autoComplete="name"
+                            disabled={isSubmitting}
                         />
                             {errors.name && (<span className='errormsg'>{errors.name.message}</span>)}
 
@@ -118,6 +121,7 @@ export default function Contact() {
                             id="email"
                             placeholder='Enter your email'
                             autoComplete="email"
+                            disabled={isSubmitting}
                         />
                         {errors.email && (<span className='errormsg'>{errors.email.message}</span>)}
 
@@ -128,6 +132,7 @@ export default function Contact() {
                             rows='8' 
                             id="textbox"
                             placeholder='Enter your message'
+                            disabled={isSubmitting}
                             >
 
                         </textarea>
@@ -140,17 +145,24 @@ export default function Contact() {
                         </button>
                     </form>
                 </div>
-                <div className="contact-right font-subHeading md:ml-[-35] subText-gradient md:py-20">
-                    <h1>Get in touch</h1>
-                    <ul className='icons'>
+                <div className="contact-right font-subHeading md:ml-[-35] md:py-20">
+                    <h1><span className="subText-gradient">Get in touch</span></h1>
+                    <ul className='icons gap-2 ml-5'>
                         <li>
-                            <a href="https://www.linkedin.com/in/wakanagushi" className="Linkedin" target="_blank">
-                                <Image src={linkedin_logo} alt="Linkedin"  width={15} hewight={15}/>
+                            
+                            <a href="https://www.linkedin.com/in/wakanagushi" className="grid place-items-center " target="_blank">
+                                <div className="rounded-full dark:bg-gray-200 grid place-items-center p-2">
+                                    <Image src={linkedin_logo} alt="Linkedin"  width={15} height={15}/>
+                                </div>
                             </a>
+                            
                         </li>
                         <li>
-                        <a href="https://github.com/Wakana-github" className="Github" target="_blank" width={15} hewight={15}>
-                        <Image src={github_logo} alt="Github"/></a>
+                        <a href="https://github.com/Wakana-github" className="grid place-items-center" target="_blank">
+                            <div className="rounded-full dark:bg-gray-200 p-2">
+                                <Image src={github_logo} alt="Github" width={15} height={15}/>
+                            </div  >
+                        </a>
                         </li>
                     </ul>
                 </div>

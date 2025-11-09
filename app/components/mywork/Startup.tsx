@@ -59,10 +59,10 @@ const Startup = () => {
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Purpose</h3>
                     <p>- This project was created to practice using modern front-end technologies and to build a sample corporate website.</p>
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Code link</h3>
-                    <p>- See the <a href="https://startup-page-dark-7thm.vercel.app/" target="_blank"  className="text-blue-700 border-b">
+                    <p>- See the <a href="https://startup-page-dark-7thm.vercel.app/" target="_blank"  className="linkfont">
                       live page</a>
                     </p>
-                    <p>- See the code on my <a href="https://github.com/Wakana-github/startupPage_dark" target="_blank" className="text-blue-700 border-b">
+                    <p>- See the code on my <a href="https://github.com/Wakana-github/startupPage_dark" target="_blank" className="linkfont">
                       Github</a>
                     </p>       
                 </div>

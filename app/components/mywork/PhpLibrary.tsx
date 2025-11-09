@@ -36,7 +36,7 @@ const handleCloseDetails = () => {
 
   return (
     <FadeInSection>
-    <div className="bg-gray-200 pt-5 md:pt-15 px-8 md:px-4">
+    <div className="bg-gray-200 pt-5 md:pt-15 px-8 md:px-4 dark:bg-gray-600">
         <div id="phpLibrary" ref={libraryRef} className="max-w-7xl mx-auto pb-3">
                 <div className="lg:flex lg:justify-center ms:mx-6 lg:mx-10 text-base md:text-lg xl:text-xl">
                     {/* --------- Left ----------*/}
@@ -48,11 +48,11 @@ const handleCloseDetails = () => {
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Purpose</h3>
                         <p>- This system was developed as part of my coursework. It is designed for library management and includes a login page styled with Bootstrap.</p>
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Code link</h3>
-                        <p>- View the <a href="https://vegelog.xsrv.jp/" target="_blank" className="text-blue-700 border-b">
+                        <p>- View the <a href="https://vegelog.xsrv.jp/" target="_blank" className="linkfont">
                                 live page
                             </a>
                         </p>
-                        <p>- View the source code on my <a href="https://github.com/Wakana-github/php_LibraryManagement" target="_blank" className="text-blue-700 border-b">
+                        <p>- View the source code on my <a href="https://github.com/Wakana-github/php_LibraryManagement" target="_blank" className="linkfont">
                              Github</a>
                         </p>
                     </div>
@@ -60,10 +60,10 @@ const handleCloseDetails = () => {
                     <div className="right lg:w-1/2">
                         <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Design</h3>
                         <p>- The design was created using Figma.
-                        <br/>- View sitemap and storyboard <a href={navigation.src} target="_blank" className="text-blue-700 border-b">(click)</a>
-                        <br/>- View prototype image <a href={prototype.src} target="_blank" className="text-blue-700 border-b">(click)</a></p>
+                        <br/>- View sitemap and storyboard <a href={navigation.src} target="_blank" className="linkfont">(click)</a>
+                        <br/>- View prototype image <a href={prototype.src} target="_blank" className="linkfont">(click)</a></p>
                         <div className="block place-items-center mt-5 px-2 lg:flex">
-                                <Image className='prototype' src={prototype} alt="prototype_image2" width={350} height={350}/>
+                                <Image className='prototype' src={prototype} alt="prototype_image2" width={350} height={350} style={{ width: '100%', height: 'auto' }}/>
                         </div>
                         <div className="grid place-items-center lg:flex lg:pl-5">
                         {!showDetails && (

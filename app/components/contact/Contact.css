@@ -111,9 +111,6 @@
         line-height: 1.3rem;
     }
 
-    .icons {
-    justify-self:start;
-    }
 
 }
 
@@ -148,15 +145,14 @@
     margin: 0 20px;
 }
     .icons {
-        padding-top: 10px;
-        margin-left: 300px
+        padding-top: 20px;
+        margin-left: 200px
     }
     .icons img {
-        width:40px;
+        width:60px;
         height: auto; 
         max-width: 40px;
         padding:0px;
-        margin-right:10px
     }
 }
 
@@ -191,8 +187,5 @@
     .icons {
         padding-top: 10px;
         margin-left: 150px;
-        width:20px;
-        max-width: 50px;
-        padding:5px;
     }
 }

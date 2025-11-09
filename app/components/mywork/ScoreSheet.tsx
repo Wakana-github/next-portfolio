@@ -32,7 +32,7 @@ import FadeInSection from '@/app/components/FadeInSection';
 
 
   return (
-    <div id="scoreSheet" ref={scoreSheetRef} className="pt-5  bg-gray-200 md:pt-15 px-4">
+    <div id="scoreSheet" ref={scoreSheetRef} className="pt-5  bg-gray-200 md:pt-15 px-4 dark:bg-gray-600">
        <div  className=" px-4 max-w-7xl mx-auto pb-3">
           <FadeInSection>
             <div className="relative flex justify-center text-center mb-10">
@@ -57,6 +57,7 @@ import FadeInSection from '@/app/components/FadeInSection';
                             src={app_img} alt="scoreApp_image"
                             width={450}
                             height={350}
+                            style={{ width: '100%', height: 'auto' }}
                     />
                     </div>
                     <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3">Summary</h3>
@@ -73,11 +74,11 @@ import FadeInSection from '@/app/components/FadeInSection';
                 {/* right */}
                 <div className="right lg:w-1/2">
                  <h3 className="font-subHeading text-xl md:text-2xl xl:text-3xl mt-3 ">Code link</h3>
-                    <p>- See the <a href="https://score-sheet-idq6.vercel.app/" target="_blank"  className="text-blue-700 border-b">
+                    <p>- See the <a href="https://score-sheet-idq6.vercel.app/" target="_blank"  className="linkfont">
                          live page
                       </a>
                     </p>
-                    <p>- See the code on my <a href="https://github.com/Wakana-github/score-sheet" target="_blank"  className="text-blue-700 border-b">
+                    <p>- See the code on my <a href="https://github.com/Wakana-github/score-sheet" target="_blank"  className="linkfont">
                         Github
                       </a>
                     </p> 
@@ -130,7 +131,7 @@ import FadeInSection from '@/app/components/FadeInSection';
                     </div>
                     <div className="right lg:w-1/2 my-5">
                       <div className="w-full grid place-items-center py-3 gap-2 mt-25">
-                        <Image src={ratelimit_img} alt="sanitise_img" width={450} height={250}/>
+                        <Image src={ratelimit_img} alt="sanitise_img" width={450} height={250} style={{ width: '100%', height: 'auto' }}/>
                         <p className="text-sm  text-gray-600">Example of ratelimit.</p>
                       </div>
                       <h4 className="font-bold">SInput Sanitisation and Validation</h4>
@@ -138,8 +139,8 @@ import FadeInSection from '@/app/components/FadeInSection';
                       <p>- Implemented validation to ensure that each input field contains the correct data type, expected length, and valid characters.</p>
                       <p>- Applied sanitisation to remove all HTML tags and attributes, ensuring that only plain text is stored in the database.</p>
                         <div className="w-full grid place-items-center py-3 gap-2 md:py-3">
-                          <Image src={sanitise_img} alt="sanitise_img" width={450} height={350}/>
-                          <Image src={validation_img} alt="validation_img" width={450} height={250}/>
+                          <Image src={sanitise_img} alt="sanitise_img" width={450} height={350} style={{ width: '100%', height: 'auto' }}/>
+                          <Image src={validation_img} alt="validation_img" width={450} height={250} style={{ width: '100%', height: 'auto' }}/>
                           <p className="text-sm  text-gray-600">Example of sanitisation and validation.</p>
                         </div>
                     </div> 

@@ -25,7 +25,7 @@ export default function Qualification() {
           <div className="md:flex md:items-center md:mx-4">
           {/* Article */}
           <FadeInSection>
-            <div className="text-base md:text-lg xl:text-xl mt-5 space-y-3 mb-3 md:mr-4 md:w-3/5">
+            <div className="text-base md:text-lg xl:text-xl mt-5 space-y-3 mb-3  md:w-4/5 ">
               <p>- Graduate Certificate in Information Technology, Queensland University of Technology - Online, Australia (2025)
               </p>
               <p>- CertificateVI in Information Technology, Canberra Institute of Technoligy, Australia (2024)</p>
@@ -33,9 +33,9 @@ export default function Qualification() {
             </div>
           </FadeInSection>
           <FadeInSection>
-            <div className="flex justify-center items-center md:w-2/5">
-              <Image id="certification-image" className="w-50 h-30 md:w-60 md:h-35 " 
-                      src={certification_image} alt="Photo" width={250} height={250} />
+            <div className="flex justify-center items-center ">
+              <Image id="certification-image" className="w-50 h-30 md:w-60 md:h-35 mt-2 md:mr-20"  
+                      src={certification_image} alt="Photo" width={300} height="auto" />
             </div>
           </FadeInSection>
             {/* certificate.png created by Canva's AI image generator */}
