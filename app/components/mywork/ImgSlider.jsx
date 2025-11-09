@@ -49,15 +49,15 @@ const ImgSlider = () => {
     ]
 
     const imgVariants = {
-        center: {x: '3%', scale:1, zIndex: 10},
-        left4: {x: '-20%', scale:0.8, zIndex: 7},
+        center: {x: '5%', scale:1.0, zIndex: 10},
+        left4: {x: '-30%', scale:0.7, zIndex: 7},
         left3: {x: '-40%', scale:0.6, zIndex: 5},
-        left2: {x: '-60%', scale:0.5, zIndex: 3},
-        left1: {x: '-80%', scale:0.4, zIndex: 2},
-        right1: {x: '80%', scale:0.4, zIndex: 2},
-        right2: {x: '60%', scale:0.5, zIndex: 3},
+        left2: {x: '-60%', scale:0.4, zIndex: 3},
+        left1: {x: '-80%', scale:0.3, zIndex: 2},
+        right1: {x: '80%', scale:0.3, zIndex: 2},
+        right2: {x: '60%', scale:0.4, zIndex: 3},
         right3: {x: '40%', scale:0.6, zIndex: 5},
-        right4: {x: '20%', scale:0.8, zIndex: 7},
+        right4: {x: '30%', scale:0.7, zIndex: 7},
     }
 
     //forward
@@ -74,11 +74,11 @@ const ImgSlider = () => {
 
 
   return (
-    <div className="flex items-center flex-col justify-center">
+    <div className="flex items-center justify-center">
         {/* Button to back */}
          <button
             onClick={prevSlide}
-            className="absolute left-5 sm:left-20 md:left-30 lg:left-49 z-20 bg-white/70 hover:bg-white rounded-full p-2 shadow-md"
+            className="absolute left-5 sm:left-20 md:left-35 lg:left-65 z-20 text-black bg-white/70 hover:bg-white rounded-full p-2 shadow-md"
         >
             <GoChevronLeft size={25} />
         </button>
@@ -91,7 +91,7 @@ const ImgSlider = () => {
                 animate={positions[positionIndex[index]]}
                 variants={imgVariants}
                 transition={{duration:0.4}}
-                className="w-[75%] sm:w-[53%] md:w-[55%] absolute left-1/2 -translate-x-1/2"
+                className="w-[80%] sm:w-[60%] md:w-[45%] absolute left-1/2 -translate-x-1/2"
             >
                 <Image
                     src={image}
@@ -104,7 +104,7 @@ const ImgSlider = () => {
         {/* Button to forward */}
         <button
             onClick={nextSlide}
-            className="absolute right-5 sm:right-20 md:right-30 lg:right-49 z-20 bg-white/70 hover:bg-white rounded-full p-2 shadow-md"
+            className="absolute right-2 sm:right-20 md:right-35 lg:right-65 z-20 text-black bg-white/70 hover:bg-white rounded-full p-2 shadow-md"
         >
             <GoChevronRight size={25} />
         </button>
